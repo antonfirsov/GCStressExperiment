@@ -25,7 +25,7 @@ namespace GCStressExperiment
             (bool managed, bool unmanaged, double maxMegabytes, double allocationStep) = ParseArguments(args);
 
             Console.WriteLine($"Managed Allocations: {managed} Unmanaged Allocations: {unmanaged} allocationStep: {allocationStep}MB");
-            Console.WriteLine($"IsServerGC: {GCSettings.IsServerGC}");
+            Console.WriteLine($"Is64BitProcess:{Environment.Is64BitProcess} IsServerGC: {GCSettings.IsServerGC}");
             PrintGCInfo();
 
             Gen2GcCallback.Register(OnGen2Gc);
